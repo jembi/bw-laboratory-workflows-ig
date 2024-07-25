@@ -12,16 +12,27 @@ alt order received by lab
     EMR -> Lab: New lab order
     deactivate EMR
 
+    activate Lab
     Lab -> Lab: Receives order
+    deactivate Lab
 else order cancelled by nurse
+
+    activate Nurse
     Nurse -> EMR: Cancel order
+    deactivate Nurse
+    
+    activate EMR
     EMR -> EMR: Reason for cancelling
     EMR -> EMR: Order cancelled
+    deactivate EMR
 
 else order rejected by lab
+
+    activate Lab
     Lab -> Lab: Reject order
     Lab -> Lab: Reason for rejection
     Lab -> EMR: Order rejected
+    deactivate Lab
 end
 
 @enduml

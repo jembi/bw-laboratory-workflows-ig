@@ -6,12 +6,12 @@ deactivate "Lab System"
 
 activate "Lab Technician"
 "Lab Technician" -> "Lab System": Gets order
-"Lab Technician" -> "Lab Device": Begins testing
+"Lab Technician" -> "Lab Device": Initiates testing
 deactivate "Lab Technician"
 
 activate "Lab Device"
-"Lab Device" -> "Lab Device": Executes tests as per lab order
-"Lab Device" --> "Lab Technician": Data
+"Lab Device" -> "Lab Device": Execute test
+"Lab Device" --> "Lab Technician": Result data
 deactivate "Lab Device"
 
 activate "Lab Technician"
