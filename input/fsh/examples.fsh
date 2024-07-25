@@ -312,5 +312,5 @@ Description: "Documents the patient's diagnostic test result."
 * encounter = Reference(GeneralEncounterExample)
 * effectiveDateTime = "2022-11-30"
 * valueString = "Positive"
-* performer = Reference(CurrentServiceProviderExample)
+* performer = Reference(LaboratoryProviderExample)
 * specimen = Reference(AvailableSpecimenForCompletedRequestsExample)
