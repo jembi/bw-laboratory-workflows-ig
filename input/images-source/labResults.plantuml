@@ -1,0 +1,26 @@
+@startuml LabResults
+
+activate "Lab System"
+"Lab System" -> "Lab System": Receives order
+deactivate "Lab System"
+
+activate "Lab Technician"
+"Lab Technician" -> "Lab System": Gets order
+"Lab Technician" -> "Lab Device": Begins testing
+deactivate "Lab Technician"
+
+activate "Lab Device"
+"Lab Device" -> "Lab Device": Executes tests as per lab order
+"Lab Device" --> "Lab Technician": Data
+deactivate "Lab Device"
+
+activate "Lab Technician"
+"Lab Technician" --> "Lab System": Capture result data
+deactivate "Lab Technician"
+
+activate "Lab System"
+"Lab System" -> "Lab System": Generate diagnostic report
+"Lab System" -> "EMR": Submit diagnostic report
+deactivate "Lab System"
+
+@enduml
