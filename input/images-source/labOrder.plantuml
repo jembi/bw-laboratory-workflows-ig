@@ -1,0 +1,27 @@
+@startuml LabOrders
+
+alt order received by lab
+
+    activate Nurse
+    Nurse -> Nurse: Collects sample
+    Nurse -> EMR: Sample details captured
+    deactivate Nurse
+
+    activate EMR
+    EMR -> EMR: Create lab order
+    EMR -> Lab: New lab order
+    deactivate EMR
+
+    Lab -> Lab: Receives order
+else order cancelled by nurse
+    Nurse -> EMR: Cancel order
+    EMR -> EMR: Reason for cancelling
+    EMR -> EMR: Order cancelled
+
+else order rejected by lab
+    Lab -> Lab: Reject order
+    Lab -> Lab: Reason for rejection
+    Lab -> EMR: Order rejected
+end
+
+@enduml

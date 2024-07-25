@@ -1,0 +1,15 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <h3>Lab Orders</h3>
+  <p>This represents the flow for a new lab order.</p>
+  <figure>
+    {% include LabOrders.svg %}
+    <figcaption>Lab Orders</figcaption>
+  </figure>
+
+   <h3>Lab Results</h3>
+  <p>This represents the flow for a lab order result.</p>
+  <figure>
+    {% include LabResults.svg %}
+    <figcaption>Lab Results</figcaption>
+  </figure>
+</div>
