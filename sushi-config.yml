@@ -15,8 +15,8 @@ title: "Botswana FHIR Implementation Guide - Laboratory"
 description: A FHIR Implementation Guide - Botswana Laboratory
 status: active
 license: CC0-1.0
-date: 2024-07-24
-version: 2.0.0
+date: 2024-07-25
+version: 1.0.0
 
 # Although fhirVersions is 0..* in the ImplementationGuide resource
 # it can be a single item OR and array here, but the current tooling 
@@ -157,14 +157,14 @@ jurisdiction: urn:iso:std:iso:3166#BW "Botswana"
 # currently only supports one level deep on sub-menus.
 # To provide a custom menu.xml file, do not include this property and
 # include a `menu.xml` file in input/includes.
-menu:
-  Home: index.html
-  Table of Contents: toc.html
-  Functional Specifications:
-    System Requirements: system_specification.html
-    Use Cases: use_cases.html
-  Technical Specifications:
-    Artifacts: artifacts.html
+#menu:
+#  Home: index.html
+#  Table of Contents: toc.html
+#  Functional Specifications:
+#    System Requirements: system_specification.html
+#    Use Cases: use_cases.html
+#  Technical Specifications:
+#    Artifacts: artifacts.html
 
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -172,9 +172,6 @@ menu:
 # values, the value in the YAML should be a sequence/array. For a
 # partial list of allowed parameters see:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-parameters:
-  special-url:
-    - http://fhir.openmrs.org/ext/patient/identifier/location
 
 # The FSHOnly flag indicates if only FSH resources should be exported.
 # If set to true, no IG related content will be generated.
