@@ -21,7 +21,7 @@ Description: "Organization providing health related services."
 * name 1..1
 
 * type 1..*
-* type from VSServiceProviderType (required)
+* type from VSServiceProviderType (extensible)
 * type.text 1..1
 
 * address 1..1
@@ -119,7 +119,7 @@ Description: "Assists with tracking the state of the lab order and its completio
 * statusReason 0..1 MS
 * statusReason ^definition = "Indicates a reason to support the status. For example, why the lab order was cancelled or rejected"
 * statusReason ^short = "Indicates a reason for the lab order being cancelled or rejected."
-* statusReason from VSReasonForSampleCancellationOrRejection
+* statusReason from VSReasonForSampleCancellationOrRejection (extensible)
 * intent = #order
 * executionPeriod 1..1
 * requester 1..1
