@@ -169,7 +169,7 @@ Parent: Practitioner
 Id: uat-practitioner
 Title: "Practitioner - General Practitioner"
 Description: 
-    "Represents the practitioner who participated in the observation."
+    "Represents the practitioner who participated in the health related service."
 * name 1..*
 * name.given 1..*
 * name.family 1..1
