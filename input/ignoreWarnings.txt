@@ -1,5 +1,4 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+# This code is found in the preferred value set as defined for the data element binding https://hl7.org/fhir/R4/valueset-doc-typecodes.html
+INFORMATION: Bundle/lab-result-document-bundle: Bundle.entry[0].resource/*Composition/LabReportCompositionExample*/.type: None of the codings provided are in the value set 'FHIR Document Type Codes' (http://hl7.org/fhir/ValueSet/doc-typecodes|4.0.1), and a coding is recommended to come from this value set (codes = http://loinc.org#11502-2)
