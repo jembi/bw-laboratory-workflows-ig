@@ -236,10 +236,65 @@ Description: "Represents the results for the lab order."
 * subject only Reference(UATBwPatient)
 * encounter 1..1
 * encounter only Reference(UATTargetFacilityEncounter)
-* result 1..1
+* result 1..*
 * result only Reference(UATDiagnosticTestResultObservation)
 * issued 1..1
 * basedOn 1..1
 * basedOn only Reference(UATServiceRequest)
 * performer 1..*
 * performer only Reference(UATPractitioner or UATServiceProvider)
+
+Profile: LabReportComposition
+Parent: Composition
+Id: lab-report-composition
+Title: "Composition - Lab report"
+Description: "Clinical document used to represent the results for a lab order"
+* identifier.value 1..1
+* identifier.system 1..1
+* identifier.system = "http://moh.gov.bw/fhir/identifier/lab-report-document"
+* status 1..1
+* subject 1..1
+* subject only Reference(UATBwPatient)
+* encounter 1..1
+* encounter only Reference(UATTargetFacilityEncounter)
+* type 1..1
+* type = $LNC#11502-2
+* date 1..1
+* author 1..*
+* author only Reference(UATPractitioner or UATServiceProvider)
+* title 1..1
+* section 1..*
+
+* insert Slice(section, reasons why this should be supported, value, code, open, Slicing sections based on the code value, false)
+
+* section contains
+    sectionPractitioners 1..1 and
+    sectionServiceRequest 1..1 and
+    sectionTask 1..1 and
+    sectionSpecimen 1..1 and
+    sectionObservations 0..1 MS and
+    sectionDiagnosticReport 0..1 MS
+
+* section[sectionObservations] ^definition =
+    "reason(s) why this should be supported."
+
+* section[sectionDiagnosticReport] ^definition =
+    "reason(s) why this should be supported."
+
+* insert CompositionEntry(Practitioner, UATPractitioner, sectionPractitioners, $LNC#LA9327-3, List of practitioners section, practitioner, 
+    Practitioners relevant for the scope of the lab report, This lists the practitioners relevant for the scope of the lab report., 1..*)
+
+* insert CompositionEntry(ServiceRequest, UATServiceRequest, sectionServiceRequest, $SCT#165332000, Lab order summary section, serviceRequest, 
+    Lab order relevant for the scope of the lab report, This lists the lab order relevant for the scope of the lab report., 1..1)
+
+* insert CompositionEntry(Task, UATLabTask, sectionTask, $LNC#92235-1, Task summary section, task, 
+    Task relevant for the scope of the lab report, This lists the task that is relevant for the scope of the lab report., 1..1)
+
+* insert CompositionEntry(Specimen, UATSpecimen, sectionSpecimen, $LNC#LP404274-5, Specimen summary section, specimen, 
+    Specimen relevant for the scope of the lab report, This lists the specimen relevant for the scope of the lab report., 1..1)
+
+* insert CompositionEntry(Observation, UATDiagnosticTestResultObservation, sectionObservations, $LNC#LP281480-6, Lab results summary section, result, 
+    Lab results relevant for the scope of the lab report, This lists the lab results relevant for the scope of the lab report., 1..*)
+
+* insert CompositionEntry(DiagnosticReport, UATDiagnosticReport, sectionDiagnosticReport, $LNC#LP420386-7, Diagnostic report summary section, report, 
+    Diagnostic report relevant for the scope of the lab report, This lists the diagnostic report relevant for the scope of the lab report., 1..1)
