@@ -248,7 +248,7 @@ Profile: LabReportComposition
 Parent: Composition
 Id: lab-report-composition
 Title: "Composition - Lab report"
-Description: "Clinical document used to represent the results for a lab order"
+Description: "Clinical document used to represent the outcome for a lab order and when applicable, with lab results."
 * identifier.value 1..1
 * identifier.system 1..1
 * identifier.system = "http://moh.gov.bw/fhir/identifier/lab-report-document"

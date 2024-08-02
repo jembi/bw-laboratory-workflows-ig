@@ -319,7 +319,7 @@ Instance: LabReportCompositionExample
 InstanceOf: LabReportComposition
 Usage: #example
 Title: "Composition - Lab report"
-Description: "Clinical document used to represent the results for a lab order"
+Description: "Clinical document used to represent the outcome for a lab order and when applicable, with lab results."
 * identifier.value = "PAT0001-v1"
 * identifier.system = "http://moh.gov.bw/fhir/identifier/lab-report-document"
 * status = #final
